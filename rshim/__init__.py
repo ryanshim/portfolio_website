@@ -4,9 +4,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-    aboutMe = open("./longTexts/aboutMe.txt", "r")
-    line = aboutMe.read()
-    return render_template("main.html", title="Ryan Shim", paragraph="Website in production!", about=line)
+    #aboutMe = open("./longTexts/aboutMe.txt", "r")
+    #line = aboutMe.read()
+    return render_template("main.html", title="Ryan Shim", paragraph="Website in production!")
 
 @app.route('/projects/')
 def projects():
