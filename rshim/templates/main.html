@@ -50,13 +50,12 @@ body {
 						<p class="centered-text">Link image here</p>
 					</div>
 					<div class="col-md-6">
-						{{ bio1 }}
-						<br></br>
-						{{ bio2 }}
-						<br></br>
-						{{ bio3 }}
-						<br></br>
-						{{ bio4 }}
+						<p>
+						{% for line in bio %}
+							{{ line }}
+							<br></br>
+						{% endfor %}
+						</p>
 					</div>
 				</div>
 			</div>
