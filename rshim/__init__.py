@@ -11,8 +11,10 @@ def homepage():
 @app.route('/projects/')
 def projects():
     return render_template("project.html",
-                            title="Projects Completed",
+                            title="Projects",
                             paragraph="This is the projects page; website in production",
+                            gitPrj1="https://github.com/ryanshim/portfolio_website/",
+                            gitPrj1Name="Portfolio Website",
                             home="Return to homepage")
 
 @app.route('/contact/')
