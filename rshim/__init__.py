@@ -6,7 +6,12 @@ app = Flask(__name__)
 def homepage():
     with app.open_resource('static/aboutMe.txt') as f:
         aboutMe = f.read().split('\n')
-    return render_template("main.html", title="Ryan Shim", paragraph="Website in production!", bio=aboutMe)
+    return render_template("main.html",
+                            title="Ryan Shim",
+                            paragraph="Website in production!",
+                            bio=aboutMe,
+                            gitLink="https://github.com/ryanshim",
+                            gitLogo="static/images/GitHub-Mark-64px.png")
 
 @app.route('/projects/')
 def projects():
