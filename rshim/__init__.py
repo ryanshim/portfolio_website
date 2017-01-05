@@ -11,7 +11,9 @@ def homepage():
                             paragraph="Website in production!",
                             bio=aboutMe,
                             gitLink="https://github.com/ryanshim",
-                            gitLogo="static/images/GitHub-Mark-64px.png")
+                            gitLogo="static/images/GitHub-Mark-64px.png",
+                            linkedInLink="https://www.linkedin.com/in/ryan-shim-2a119a1a",
+                            linkedInLogo="static/images/linkedIn.png")
 
 @app.route('/projects/')
 def projects():

@@ -8,16 +8,8 @@
 
 <style>
 
-.top-buffer {
-	margin-top:150px;
-}
-
 .centered-text {
 	text-align:center;
-}
-
-body {
-	padding-top: 20px;
 }
 
 .footer-images img{
@@ -25,12 +17,13 @@ body {
     border:0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family:"Quicksand";
+.top-buffer {
+	margin-top:150px;
 }
 
-p, div {
-    font-family:"Quicksand";
+body {
+	padding-top: 20px;
+    font-family:"Quicksand", sans-serif;
 }
 
 </style>
@@ -40,18 +33,20 @@ p, div {
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4">
-					<h3> {{ title }} </h3>
+                    <h3><span style="font-weight:bold;"> {{ title }} </span></h3>
 				</div>
 				<div class="col-sm-4">
 					<p>	{{ paragraph }} </p>
 				</div>
 				<div class="col-sm-4">
-					<div class="btn-group" role="group" aria-label="...">
-						<a href="/"><button type="button" class="btn btn-default">Home</button></a>
-						<a href="/projects/"><button type="button" class="btn btn-default">Projects</button></a>
-						<a href="/contact/"><button type="button" class="btn btn-default">Contact</button></a>
-					</div>
-				</div>
+                    <h3>
+                        <div class="btn-group pull-right" role="group" aria-label="...">
+                            <!-- <a href="/"><button type="button" class="btn btn-default">Home</button></a> -->
+                            <a href="/projects/"><button type="button" class="btn btn-default">Projects</button></a>
+                            <a href="/contact/"><button type="button" class="btn btn-default">Contact</button></a>
+                        </div>
+                    </h3>               
+                </div>
 			</div>
 		</div>
 
@@ -79,9 +74,11 @@ p, div {
     <!-- footer -->
     <div class="footer-images">
         <div class="container">
-            <div class="col-sm-4"></div>
             <div class="col-sm-4">
-                <a href={{ gitLink }}><img src={{ gitLogo }}></a>
+                 <a href={{ linkedInLink }}><img class="pull-right" src={{ linkedInLogo }}></a>           
+            </div>
+            <div class="col-sm-4">
+                <a href={{ gitLink }}><img class="pull-right" src={{ gitLogo }}></a>
             </div>
             <div class="col-sm-4"></div>
         </div>
