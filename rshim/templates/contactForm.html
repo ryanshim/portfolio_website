@@ -1,19 +1,61 @@
 <html>
 <link rel="stylesheet" media="screen" href="/static/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"> 
 
 <head>
+	<title> {{ title }} </title>
 </head>
 
+<style>
+
+.centered-text {
+	text-align:center;
+}
+
+.footer-images img{
+    vertical-align:bottom;
+    border:0;
+}
+
+.top-buffer {
+	margin-top:150px;
+}
+
+body {
+	padding-top: 20px;
+    font-family:"Quicksand", sans-serif;
+}
+
+</style>
+
 	<body>
+		<!-- MAIN HEADER / NAV-BAR -->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4">
+                    <h3><span style="font-weight:bold;"> {{ title }} </span></h3>
+				</div>
+				<div class="col-sm-4">
+                    <p class="centered-text"> {{ paragraph }} </p> <!-- WEBSITE IN PRODUCTION -->
+				</div>
+				<div class="col-sm-4">
+                    <h3>
+                        <div class="btn-group pull-right" role="group" aria-label="...">
+                            <a href="/"><button type="button" class="btn btn-default">Home</button></a>
+                            <a href="/projects/"><button type="button" class="btn btn-default">Projects</button></a>
+                        </div>
+                    </h3>
+                </div>
+			</div>
+		</div>
+        <!-- END MAIN HEADER -->
 
-		<h3>{{ title }}</h3>
+		<!-- MAIN CONTAINER -->
+		<div class="top-buffer">
+            <div class="container"></div> <!-- CONTACT FORM HERE -->
+		</div>
+        <!-- END MAIN CONTAINER -->
 
-		<p> {{ paragraph }} </p>
-		<p><a href="/"> {{ home }} </a></p>
-
-	</body>
-
-
-</body>
+    </body>
 
 </html>
