@@ -28,8 +28,7 @@ def projects():
 def contact():
     return render_template("contactForm.html",
                             title="Contact Me",
-                            paragraph="This is the contact me page; website in production",
-                            home="Return to homepage")
+                            paragraph="This is the contact me page; website in production")
 
 if __name__ == "__main__":
     app.run()
