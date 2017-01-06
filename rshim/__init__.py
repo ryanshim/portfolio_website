@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -21,14 +21,27 @@ def projects():
                             title="Projects",
                             paragraph="This is the projects page; website in production",
                             gitPrj1="https://github.com/ryanshim/portfolio_website/",
-                            gitPrj1Name="Portfolio Website",
-                            home="Return to homepage")
+                            gitPrj1Name="Portfolio Website")
 
 @app.route('/contact/')
 def contact():
     return render_template("contactForm.html",
                             title="Contact Me",
                             paragraph="This is the contact me page; website in production")
+
+@app.route('/handleRequest/', methods=["GET", "POST"])
+def handleRequests():
+    if request.form == "POST":
+        userText = request.form["inputText"]
+        return render_template("contact.html",
+                                title="Contact Me",
+                                paragraph="This is the contact me page; website in production",
+                                userText=userText)
+    else:
+        return render_template("result.html",
+                                title="Contact Me",
+                                paragraph="This is the contact me page; website in production",
+                                userText="a")
 
 if __name__ == "__main__":
     app.run()
