@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, json
 
 app = Flask(__name__)
 
@@ -31,17 +31,13 @@ def contact():
 
 @app.route('/handleRequest/', methods=["GET", "POST"])
 def handleRequests():
-    if request.form == "POST":
-        userText = request.form["inputText"]
-        return render_template("contact.html",
-                                title="Contact Me",
-                                paragraph="This is the contact me page; website in production",
-                                userText=userText)
+    userEmail = request.form["inputEmail"]
+    userText = request.form["inputText"]
+    if request.method == "POST":
+        return render_template("result.html", userText=userText, userEmail=userEmail)
     else:
-        return render_template("result.html",
-                                title="Contact Me",
-                                paragraph="This is the contact me page; website in production",
-                                userText="a")
+        return render_template("result.html", userText="F", userEmail="F")
+
 
 if __name__ == "__main__":
     app.run()
