@@ -1,6 +1,19 @@
 from flask import Flask, render_template, request, json
+#from flask-mail import Mail, Message
 
 app = Flask(__name__)
+'''
+app.config.update(
+        DEBUG=True,
+        #EMAIL SETTINGS
+        MAIL_SERVER='smtp.gmail.com',
+        MAIL_PORT=465,
+        MAIL_USE_SSL=True,
+        MAIL_USERNAME='emailHere',
+        MAIL_PASSWORD='passwordHere'
+        )
+mail = Mail(app)
+'''
 
 @app.route('/')
 def homepage():
@@ -29,12 +42,22 @@ def contact():
                             title="Contact Me",
                             paragraph="This is the contact me page; website in production")
 
-@app.route('/handleRequest/', methods=["GET", "POST"])
+@app.route('/sendMail/', methods=["GET", "POST"])
 def handleRequests():
     userEmail = request.form["inputEmail"]
     userText = request.form["inputText"]
     if request.method == "POST":
         return render_template("result.html", userText=userText, userEmail=userEmail)
+        '''
+        try:
+            msg = Message("New website contact message",
+                    sender=userEmail,
+                    recipients=["rcshim91@gmail.com"])
+            msg.body = userText
+            return render_template("result.html", userText=userText, userEmail=userEmail)
+        except Exception, e:
+            return render_template("result.html", userText=str(e)
+        '''
     else:
         return render_template("result.html", userText="F", userEmail="F")
 
