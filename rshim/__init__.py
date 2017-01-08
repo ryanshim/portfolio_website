@@ -1,19 +1,17 @@
 from flask import Flask, render_template, request, json
-#from flask-mail import Mail, Message
+from flask_mail import Mail, Message
 
 app = Flask(__name__)
-'''
 app.config.update(
         DEBUG=True,
         #EMAIL SETTINGS
         MAIL_SERVER='smtp.gmail.com',
         MAIL_PORT=465,
         MAIL_USE_SSL=True,
-        MAIL_USERNAME='emailHere',
-        MAIL_PASSWORD='passwordHere'
+        MAIL_USERNAME='yourEmailHere',
+        MAIL_PASSWORD='yourPassHere'
         )
 mail = Mail(app)
-'''
 
 @app.route('/')
 def homepage():
@@ -46,21 +44,24 @@ def contact():
 def handleRequests():
     userEmail = request.form["inputEmail"]
     userText = request.form["inputText"]
+
     if request.method == "POST":
+        sendMail(userEmail, userText)
         return render_template("result.html", userText=userText, userEmail=userEmail)
-        '''
-        try:
-            msg = Message("New website contact message",
-                    sender=userEmail,
-                    recipients=["emailHere"])
-            msg.body = userText
-            return render_template("result.html", userText=userText, userEmail=userEmail)
-        except Exception, e:
-            return render_template("result.html", userText=str(e)
-        '''
     else:
         return render_template("result.html", userText="F", userEmail="F")
 
+def sendMail(userEmail, userText):
+    try:
+        msg = Message("New website contact message",
+                sender="sendEmailToYourself",
+                recipients=["sendEmailToYourself"])
+        msg.body = userText
+        mail.send(msg)
+        return "Mail Sent"
+
+    except Exception, e:
+        return str(e)
 
 if __name__ == "__main__":
     app.run()
