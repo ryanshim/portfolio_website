@@ -52,7 +52,7 @@ def handleRequests():
         try:
             msg = Message("New website contact message",
                     sender=userEmail,
-                    recipients=["rcshim91@gmail.com"])
+                    recipients=["emailHere"])
             msg.body = userText
             return render_template("result.html", userText=userText, userEmail=userEmail)
         except Exception, e:
