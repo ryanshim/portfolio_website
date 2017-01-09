@@ -1,6 +1,48 @@
+<!DOCTYPE html>
 <html>
-    <body>
-        <p> {{ userText }} </p>
-        <p> {{ userEmail }} </p>
+<link rel="stylesheet" media="screen" href="/static/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"> 
+
+
+<style>
+
+.centered-text {
+	text-align:center;
+}
+
+.footer-images img{
+    vertical-align:bottom;
+    border:0;
+}
+
+.top-buffer {
+	margin-top:150px;
+}
+
+.small-top-buffer {
+    margin-top:50px;
+}
+
+body {
+	padding-top: 20px;
+    font-family:"Quicksand", sans-serif;
+}
+
+</style>
+
+	<body>
+		<!-- MAIN CONTAINER -->
+		<div class="small-top-buffer">
+            <div class="container">
+                <div class="centered-text">
+                    <p>{{ confirm }}</p>
+                    <br>
+                    <a href="/">{{ backHome }}</a>
+                </div>
+            </div>
+		</div>
+        <!-- END MAIN CONTAINER -->
+
     </body>
+
 </html>
