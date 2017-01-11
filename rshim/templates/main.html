@@ -1,87 +1,86 @@
+<!DOCTYPE html>
 <html>
 <link rel="stylesheet" media="screen" href="/static/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"> 
 
-<head>
-	<title> {{ title }} </title>
-</head>
-
 <style>
-
 .centered-text {
 	text-align:center;
 }
 
 .footer-images img{
+    padding-top:50px;
     vertical-align:bottom;
     border:0;
 }
 
 .top-buffer {
-	margin-top:150px;
+	margin-top:100px;
 }
 
 body {
-	padding-top: 20px;
+	padding-top:20px;
     font-family:"Quicksand", sans-serif;
 }
 
 </style>
 
-	<body>
-		<!-- main header / nav bar -->
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-                    <h3><span style="font-weight:bold;"> {{ title }} </span></h3>
-				</div>
-				<div class="col-sm-4">
-                    <p class="centered-text"> {{ paragraph }} </p> <!-- WEBSITE IN PRODUCTION -->
-				</div>
-				<div class="col-sm-4">
-                    <h3>
-                        <div class="btn-group pull-right" role="group" aria-label="...">
-                            <!-- <a href="/"><button type="button" class="btn btn-default">Home</button></a> -->
-                            <a href="/projects/"><button type="button" class="btn btn-default">Projects</button></a>
-                            <a href="/contact/"><button type="button" class="btn btn-default">Contact</button></a>
-                        </div>
-                    </h3>               
-                </div>
-			</div>
-		</div>
+<title> {{ title }} </title>
 
-		<!-- main container -->
-		<div class="top-buffer">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<p class="centered-text">Link image here</p>
-					</div>
-					<div class="col-md-6">
-						<p>
-						{% for line in bio %}
-							{{ line }}
-							<br></br>
-						{% endfor %}
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-
-        <!-- footer -->
-        <div class="footer-images">
-            <div class="container">
-                <div class="col-sm-4">
-                     <a href={{ linkedInLink }}><img class="pull-right" src={{ linkedInLogo }}></a>           
-                </div>
-                <div class="col-sm-4">
-                    <a href={{ gitLink }}><img class="pull-right" src={{ gitLogo }}></a>
-                </div>
-                <div class="col-sm-4"></div>
+<body>
+    <!-- main header / nav bar -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h3><span style="font-weight:bold;"> {{ title }} </span></h3>
+            </div>
+            <div class="col-sm-4">
+                <p class="centered-text"> {{ paragraph }} </p> <!-- WEBSITE IN PRODUCTION -->
+            </div>
+            <div class="col-sm-4">
+                <h3>
+                    <div class="btn-group pull-right" role="group" aria-label="...">
+                        <!-- <a href="/"><button type="button" class="btn btn-default">Home</button></a> -->
+                        <a href="/projects/"><button type="button" class="btn btn-default">Projects</button></a>
+                        <a href="/contact/"><button type="button" class="btn btn-default">Contact</button></a>
+                    </div>
+                </h3>               
             </div>
         </div>
+    </div>
 
-    </body>
+    <!-- main container -->
+    <div class="top-buffer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="centered-text">Link image here</p>
+                </div>
+                <div class="col-md-6">
+                    <p>
+                    {% for line in bio %}
+                        {{ line }}
+                        <br></br>
+                    {% endfor %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer-images">
+        <div class="container">
+            <div class="col-sm-4">
+                 <a href={{ linkedInLink }}><img class="pull-right" src={{ linkedInLogo }}></a>           
+            </div>
+            <div class="col-sm-4">
+                <a href={{ gitLink }}><img class="pull-right" src={{ gitLogo }}></a>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+
+</body>
 
 </html>
