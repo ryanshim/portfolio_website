@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, json
+from flask import Flask, render_template, request
 from flask_mail import Mail, Message
 
 app = Flask(__name__)
@@ -16,7 +16,7 @@ mail = Mail(app)
 # main page
 @app.route('/')
 def homepage():
-    with app.open_resource('static/aboutMe.txt') as f:
+    with app.open_resource('static/textFiles/aboutMe.txt') as f:
         aboutMe = f.read().split('\n')
     return render_template("main.html",
             title="Ryan Shim",
@@ -24,6 +24,8 @@ def homepage():
             bio=aboutMe,
             gitLink="https://github.com/ryanshim",
             gitLogo="static/images/GitHub-Mark-64px.png",
+            resumeLink="static/textFiles/RyanShimResume-1-11-2015.pdf",
+            resumeIcon="static/images/resumeIcon.png",
             linkedInLink="https://www.linkedin.com/in/ryan-shim-2a119a1a",
             linkedInLogo="static/images/linkedIn.png")
 
