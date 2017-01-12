@@ -1,4 +1,0 @@
-Hello! I am currently a graduate student at California State University - Fullerton studying Computer Science and looking to pursue a career in software development within the aerospace industry.
-I received a BSBA with a concentration in Information Technology Management from Saint Louis University where I began learning Python during my free time. Additionally, I have a basic understanding of Java and C/C++ from taking classes. 
-I enjoy playing soccer in my free time! I am an Arsenal fan! COYG!
-My current and past projects can be found under the Projects page with a link to their source codes on Github. To get in touch with me, please see visit the Contact page and I will get back to you fairly quickly.
