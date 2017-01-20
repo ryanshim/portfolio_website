@@ -32,11 +32,19 @@ def homepage():
 # projects page
 @app.route('/projects/')
 def projects():
+    with app.open_resource('static/textFiles/abtPortfolioWebsite.txt') as f1:
+        data1 = f1.read().split('\n')
+    with app.open_resource('static/textFiles/abtSatTracker.txt') as f2:
+        data2 = f2.read().split('\n')
     return render_template("project.html",
             title="Projects",
             paragraph="This is the projects page; website in production",
             gitPrj1="https://github.com/ryanshim/portfolio_website/",
-            gitPrj1Name="Portfolio Website")
+            gitPrj1Name="Portfolio Website",
+            gitPrj1Desc=data1,
+            gitPrj2="https://github.com/ryanshim/sat_tracker/",
+            gitPrj2Name="Satellite Tracker",
+            gitPrj2Desc=data2)
 
 # contact page (form)
 @app.route('/contact/')

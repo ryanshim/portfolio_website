@@ -1,10 +1,9 @@
+<!DOCTYPE html>
 <html>
 <link rel="stylesheet" media="screen" href="/static/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"> 
 
-<head>
-	<title> {{ title }} </title>
-</head>
+<title> {{ title }} </title>
 
 <style>
 
@@ -48,7 +47,24 @@ body {
 		<!-- MAIN CONTAINER -->
 		<div class="small-top-buffer">
             <div class="container">
-                <a href={{ gitPrj1 }}>{{ gitPrj1Name }}</a>
+                <div class="col-md-10">
+                    <h4><a href={{ gitPrj1 }}>{{ gitPrj1Name }}</a></h4> <!-- Project1 -->
+                    <p>
+                    {% for line in gitPrj1Desc %}
+                        {{ line }}
+                        <br></br>
+                    {% endfor %}
+                    </p>
+                </div>
+                <div class="col-md-10">
+                    <h4><a href={{ gitPrj2 }}>{{ gitPrj2Name }}</a></h4> <!-- Project2 -->
+                    <p>
+                    {% for line in gitPrj2Desc %}
+                        {{ line }}
+                        <br></br>
+                    {% endfor %}
+                    </p>
+                </div>
             </div>
 		</div>
         <!-- END MAIN CONTAINER -->
