@@ -44,7 +44,9 @@ def projects():
             gitPrj1Desc=data1,
             gitPrj2="https://github.com/ryanshim/sat_tracker/",
             gitPrj2Name="Satellite Tracker",
-            gitPrj2Desc=data2)
+            gitPrj2Desc=data2,
+            pyEphemLink="http://rhodesmill.org/pyephem/",
+            sgp4Link="https://pypi.python.org/pypi/sgp4/")
 
 # contact page (form)
 @app.route('/contact/')

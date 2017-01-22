@@ -6,6 +6,10 @@
 <title> {{ title }} </title>
 
 <style>
+.footer-buffer {
+    margin:0px;
+    padding:0px;
+}
 
 .top-buffer {
 	margin-top:150px;
@@ -63,11 +67,19 @@ body {
                         {{ line }}
                         <br></br>
                     {% endfor %}
+
                     </p>
                 </div>
             </div>
 		</div>
         <!-- END MAIN CONTAINER -->
+
+        <!-- FOOTER CONTAINER -->
+        <div class="container">
+            <p class="footer-buffer">[1] <a href={{ pyEphemLink }}>PyEphem</a></p>
+            <p class="footer-buffer">[2] <a href={{ sgp4Link }}>sgp4</a></p>
+        </div>
+        <br></br>
 
     </body>
 
