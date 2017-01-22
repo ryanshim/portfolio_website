@@ -1,3 +1,3 @@
-The satellite tracker is currently under construction as well. Currently, I am testing the program by tracking the ISS. It uses TLE data obtained from Space-Track's API and utilizes the open source libraries, PyEphem and sgp4 (links below), to compute the current position of the object.
+The satellite tracker is currently under construction as well. Currently, I am testing the program by tracking the ISS. It uses TLE data obtained from Space-Track's API and utilizes the open source libraries, PyEphem[1] and sgp4[2], to compute the current position of the object.
 I have implemented functions to output the observer's view direction (azimuth and elevation), which will later be fed to a Raspberry Pi to point an antenna towards the object as it passes overhead. I am hoping to obtain images of the Earth from weather satellites and show them on this website.
 I have learned a great deal about basic orbital mechanics and its terminology. Check back to see the progress soon!
