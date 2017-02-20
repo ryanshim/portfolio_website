@@ -19,7 +19,7 @@ def homepage():
     with app.open_resource('static/textFiles/aboutMe.txt') as f:
         aboutMe = f.read().split('\n')
     return render_template("main.html",
-            title="Ryan Shim",
+            title="RYAN SHIM",
             paragraph="Website in production!",
             bio=aboutMe,
             gitLink="https://github.com/ryanshim",
@@ -37,7 +37,7 @@ def projects():
     with app.open_resource('static/textFiles/abtSatTracker.txt') as f2:
         data2 = f2.read().split('\n')
     return render_template("project.html",
-            title="Projects",
+            title="PROJECTS",
             paragraph="This is the projects page; website in production",
             gitPrj1="https://github.com/ryanshim/portfolio_website/",
             gitPrj1Name="Portfolio Website",
@@ -52,7 +52,7 @@ def projects():
 @app.route('/contact/')
 def contact():
     return render_template("contactForm.html",
-            title="Contact Me",
+            title="CONTACT ME",
             paragraph="This is the contact me page; website in production")
 
 # message sent confirmation page
