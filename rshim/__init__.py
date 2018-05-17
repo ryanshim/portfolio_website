@@ -24,7 +24,7 @@ def homepage():
             bio=aboutMe,
             gitLink="https://github.com/ryanshim",
             gitLogo="static/images/GitHub-Mark-64px.png",
-            resumeLink="static/textFiles/RyanShimResume-1-11-2015.pdf",
+            resumeLink="static/textFiles/resume.pdf",
             resumeIcon="static/images/resumeIcon.png",
             linkedInLink="https://www.linkedin.com/in/ryan-shim-2a119a1a",
             linkedInLogo="static/images/linkedIn.png")
