@@ -8,8 +8,8 @@ app.config.update(
         MAIL_SERVER='smtp.gmail.com',
         MAIL_PORT=465,
         MAIL_USE_SSL=True,
-        MAIL_USERNAME='emailHere',
-        MAIL_PASSWORD='passHere'
+        MAIL_USERNAME='xxxxxxxxxx',
+        MAIL_PASSWORD='xxxxxxxxxx'
         )
 mail = Mail(app)
 
@@ -45,6 +45,8 @@ def projects():
             gitPrj2="https://github.com/ryanshim/sat_tracker/",
             gitPrj2Name="Satellite Tracker",
             gitPrj2Desc=data2,
+            gitPrj3="https://github.com/ryanshim/dataStructuresAlgo/",
+            gitPrj3Name="Data Structures and Algorithms (c++)",
             pyEphemLink="http://rhodesmill.org/pyephem/",
             sgp4Link="https://pypi.python.org/pypi/sgp4/")
 
@@ -73,8 +75,8 @@ def handleRequests():
 def sendMail(userEmail, userText):
     try:
         msg = Message("New website contact message from: " + str(userEmail),
-                sender="sameEmailHere",
-                recipients=["sameEmailHere"])
+                sender="xxxxxxxxxx",
+                recipients=["xxxxxxxxxx"])
         msg.body = userText
         mail.send(msg)
         return "Mail Sent"
