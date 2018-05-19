@@ -10,17 +10,17 @@
 
 h3 {
     font-weight: normal;
-    color: white;
+    color: slategrey;
 }
 
 .btn-default {
     background-color: transparent;
-    color:grey;
+    color:slategrey;
 }
 
 body {
     padding-top:20px;
     font-family:"Questrial", sans-serif;
     background-color: black;
-    color: white;
+    color: slategrey;
 }
