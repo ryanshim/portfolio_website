@@ -1,0 +1,26 @@
+.footer-images img{
+    padding-top:50px;
+    vertical-align:bottom;
+    border:0;
+}
+
+.top-buffer {
+	margin-top:100px;
+}
+
+h3 {
+    font-weight: normal;
+    color: white;
+}
+
+.btn-default {
+    background-color: transparent;
+    color:grey;
+}
+
+body {
+    padding-top:20px;
+    font-family:"Questrial", sans-serif;
+    background-color: black;
+    color: white;
+}

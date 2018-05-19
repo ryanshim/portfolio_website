@@ -16,25 +16,25 @@ mail = Mail(app)
 # main page
 @app.route('/')
 def homepage():
-    with app.open_resource('static/textFiles/aboutMe.txt') as f:
+    with app.open_resource('static/textFiles/aboutMe.txt', 'r') as f:
         aboutMe = f.read().split('\n')
     return render_template("main.html",
             title="RYAN SHIM",
             paragraph="Website in production!",
             bio=aboutMe,
             gitLink="https://github.com/ryanshim",
-            gitLogo="static/images/GitHub-Mark-64px.png",
+            gitLogo="static/images/GitHub-Mark-Light-64px.png",
             resumeLink="static/textFiles/resume.pdf",
-            resumeIcon="static/images/resumeIcon.png",
+            resumeIcon="static/images/resumeIcon1.png",
             linkedInLink="https://www.linkedin.com/in/ryan-shim-2a119a1a",
-            linkedInLogo="static/images/linkedIn.png")
+            linkedInLogo="static/images/In-White-66px-TM.png")
 
 # projects page
 @app.route('/projects/')
 def projects():
-    with app.open_resource('static/textFiles/abtPortfolioWebsite.txt') as f1:
+    with app.open_resource('static/textFiles/abtPortfolioWebsite.txt', 'r') as f1:
         data1 = f1.read().split('\n')
-    with app.open_resource('static/textFiles/abtSatTracker.txt') as f2:
+    with app.open_resource('static/textFiles/abtSatTracker.txt', 'r') as f2:
         data2 = f2.read().split('\n')
     return render_template("project.html",
             title="PROJECTS",
@@ -81,7 +81,7 @@ def sendMail(userEmail, userText):
         mail.send(msg)
         return "Mail Sent"
 
-    except Exception, e:
+    except Exception as e:
         return str(e)
 
 if __name__ == "__main__":

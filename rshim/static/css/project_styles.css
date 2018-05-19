@@ -1,0 +1,17 @@
+.footer-buffer {
+    margin:0px;
+    padding:0px;
+}
+
+.top-buffer {
+	margin-top:150px;
+}
+
+.small-top-buffer {
+    margin-top:50px;
+}
+
+body {
+	padding-top: 20px;
+    font-family:"Questrial", sans-serif;
+}
