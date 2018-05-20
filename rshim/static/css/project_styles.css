@@ -11,6 +11,12 @@
     margin-top:50px;
 }
 
+.btn-default {
+    width: 80px;
+    background-color: transparent;
+    color:slategrey;
+}
+
 body {
 	padding-top: 20px;
     font-family:"Questrial", sans-serif;
