@@ -14,4 +14,6 @@
 body {
 	padding-top: 20px;
     font-family:"Questrial", sans-serif;
+    background-color: black;
+    color: slategrey;
 }

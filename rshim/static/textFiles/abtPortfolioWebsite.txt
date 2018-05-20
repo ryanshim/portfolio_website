@@ -1,3 +1,3 @@
 The primary purpose of this website that you are currently navigating right now is to learn about building websites.
 This website was built on the Flask framework, Jinja2 templating, and Bootstrap. I am actively constructing this website and trying to integrate my other side projects as web applications. It's been fun building this from "scratch" (I'm sure there are more complex frameworks than Flask!)
-Things I've learned so far: Basic backend/frontend development, GET/POST methods for forms, basic sysadmin duties.
+Things I've learned so far: Basic backend/frontend development, GET/POST methods for forms, basic sys admin duties.

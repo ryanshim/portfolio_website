@@ -21,3 +21,22 @@ body {
     background-color: black;
     color: slategrey;
 }
+
+.btn-default {
+    width: 80px;
+    background-color: transparent;
+    color: slategrey;
+}
+
+input[type=email] {
+    background-color: black;
+}
+
+textarea[type=text] {
+    background-color: black;
+}
+
+form {
+    margin: 0 auto;
+    width:800px;
+}

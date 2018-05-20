@@ -13,7 +13,7 @@ app.config.update(
         )
 mail = Mail(app)
 
-# main page
+# MAIN PAGE
 @app.route('/')
 def homepage():
     with app.open_resource('static/textFiles/aboutMe.txt', 'r') as f:
@@ -29,7 +29,7 @@ def homepage():
             linkedInLink="https://www.linkedin.com/in/ryan-shim-2a119a1a",
             linkedInLogo="static/images/In-White-66px-TM.png")
 
-# projects page
+# PROJECTS PAGE
 @app.route('/projects/')
 def projects():
     with app.open_resource('static/textFiles/abtPortfolioWebsite.txt', 'r') as f1:
@@ -50,14 +50,14 @@ def projects():
             pyEphemLink="http://rhodesmill.org/pyephem/",
             sgp4Link="https://pypi.python.org/pypi/sgp4/")
 
-# contact page (form)
+# CONTACT PAGE (FORM)
 @app.route('/contact/')
 def contact():
     return render_template("contactForm.html",
             title="CONTACT ME",
             paragraph="This is the contact me page; website in production")
 
-# message sent confirmation page
+# EMAIL SENT CONFIRMATION PAGE
 @app.route('/sendMail/', methods=["GET", "POST"])
 def handleRequests():
     userEmail = request.form["inputEmail"]
@@ -72,10 +72,11 @@ def handleRequests():
         return render_template("result.html",
                 confirm="Message failed to deliver")
 
+# EMAIL HELPER FUNCTION
 def sendMail(userEmail, userText):
     try:
         msg = Message("New website contact message from: " + str(userEmail),
-                sender="xxxxxxxxxx",
+                sender=userEmail,
                 recipients=["xxxxxxxxxx"])
         msg.body = userText
         mail.send(msg)
