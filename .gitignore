@@ -1,3 +1,5 @@
 # Custom Ignores #
 .vscode
+__pycache__/
 .pyc
+.pyo
