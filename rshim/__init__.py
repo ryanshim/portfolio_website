@@ -1,3 +1,7 @@
+import sqlite3
+import collections
+import json
+from .satellite import Sat
 from flask import Flask, render_template, request
 from flask_mail import Mail, Message
 
@@ -49,6 +53,39 @@ def projects():
             gitPrj3Name="Data Structures and Algorithms (c++)",
             pyEphemLink="http://rhodesmill.org/pyephem/",
             sgp4Link="https://pypi.python.org/pypi/sgp4/")
+
+# CESIUM PAGE
+@app.route('/sat_track/')
+def ces_track():
+    iss_positions = []
+    positions = []
+    error_count = 0
+
+    conn = sqlite3.connect('./static/data/tle.db')
+    c = conn.cursor()
+
+    for row in c.execute('SELECT * FROM tles'):
+        sat = Sat(row[0], row[1], row[2])
+        try:
+            lat, lon, height = sat.get_position()
+        except:
+            print("TLE ERROR FOR: " + str(row))
+            error_count += 1
+            pass
+        positions.append([lat, lon, height])
+
+    # Retrieve ISS tle
+    iss_data = []
+    for row in c.execute("SELECT * FROM tles WHERE itl_desig = '98067A  '"):
+        iss_data = row
+
+    conn.close()
+    #print(error_count)
+    #print(iss_data)
+
+    return render_template('cesiumPage.html', 
+            pos_arr=json.dumps(positions),
+            iss_tle=json.dumps(iss_data))
 
 # CONTACT PAGE (FORM)
 @app.route('/contact/')

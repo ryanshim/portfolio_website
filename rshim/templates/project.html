@@ -10,8 +10,6 @@
 <link rel="stylesheet" href="/static/css/project_styles.css">
 
 <title> {{ title }} </title>
-
-
 	<body>
 		<!-- MAIN HEADER / NAV-BAR -->
 		<div class="container">
@@ -38,7 +36,8 @@
 		<div class="small-top-buffer">
             <div class="container">
                 <div class="col-md-10">
-                    <h4><a href={{ gitPrj1 }}>{{ gitPrj1Name }}</a></h4> <!-- Project1 -->
+                    <!-- Project1 -->
+                    <h4><a href={{ gitPrj1 }}>{{ gitPrj1Name }}</a></h4>
                     <p>
                     {% for line in gitPrj1Desc %}
                         {{ line }}
@@ -47,7 +46,9 @@
                     </p>
                 </div>
                 <div class="col-md-10">
-                    <h4><a href={{ gitPrj2 }}>{{ gitPrj2Name }}</a></h4> <!-- Project2 -->
+                    <!-- Project2 -->
+                    <h4><a href={{ gitPrj2 }}>{{ gitPrj2Name }}</a></h4>
+                    <h6><a href="/sat_track/">Application</a></h6>
                     <p>
                     {% for line in gitPrj2Desc %}
                         {{ line }}
@@ -56,7 +57,8 @@
                     </p>
                 </div>
                 <div class="col-md-10">
-                    <h4><a href={{ gitPrj3 }}>{{ gitPrj3Name }}</a></h4> <!-- Project2 -->
+                    <!-- Project2 -->
+                    <h4><a href={{ gitPrj3 }}>{{ gitPrj3Name }}</a></h4>
                     <p>
                     Project 3 Description here...
                     <br></br>
