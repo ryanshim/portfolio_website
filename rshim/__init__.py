@@ -2,9 +2,17 @@ import sqlite3
 import collections
 import json
 from .satellite import Sat
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, g
 from flask_mail import Mail, Message
 
+#################
+#### GLOBALS ####
+#################
+DATABASE = './static/data/tle.db'
+
+############################
+#### FLASK EMAIL CONFIG ####
+############################
 app = Flask(__name__)
 app.config.update(
         DEBUG=True,
@@ -17,6 +25,9 @@ app.config.update(
         )
 mail = Mail(app)
 
+####################
+### PAGE ROUTES ####
+####################
 # MAIN PAGE
 @app.route('/')
 def homepage():
@@ -61,7 +72,7 @@ def ces_track():
     positions = []
     error_count = 0
 
-    conn = sqlite3.connect('./static/data/tle.db')
+    conn = sqlite3.connect(DATABASE)
     c = conn.cursor()
 
     for row in c.execute('SELECT * FROM tles'):
@@ -109,6 +120,9 @@ def handleRequests():
         return render_template("result.html",
                 confirm="Message failed to deliver")
 
+##########################
+#### HELPER FUNCTIONS ####
+##########################
 # EMAIL HELPER FUNCTION
 def sendMail(userEmail, userText):
     try:
@@ -122,5 +136,8 @@ def sendMail(userEmail, userText):
     except Exception as e:
         return str(e)
 
+############################
+#### APP RUN AND GUARDS ####
+############################
 if __name__ == "__main__":
     app.run()
