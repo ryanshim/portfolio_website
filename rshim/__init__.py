@@ -2,7 +2,7 @@ import sqlite3
 import collections
 import json
 from .satellite import Sat
-from flask import Flask, render_template, request, g
+from flask import Flask, render_template, request
 from flask_mail import Mail, Message
 
 #################
