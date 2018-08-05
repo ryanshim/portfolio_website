@@ -8,7 +8,7 @@ from flask_mail import Mail, Message
 #################
 #### GLOBALS ####
 #################
-DATABASE = './static/data/tle.db'
+DATABASE = '/var/www/portfolio_website/portfolio_website/static/data/tle.db'
 
 ############################
 #### FLASK EMAIL CONFIG ####
