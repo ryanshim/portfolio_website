@@ -1,7 +1,6 @@
 import sqlite3
 import collections
 import json
-from .satellite import Sat
 from flask import Flask, render_template, request
 from flask_mail import Mail, Message
 
@@ -9,11 +8,13 @@ from flask_mail import Mail, Message
 #### GLOBALS ####
 #################
 DATABASE = '/var/www/portfolio_website/portfolio_website/static/data/tle.db'
+DATABASE = './static/data/tle.db'   # delete before commit
 
 ############################
 #### FLASK EMAIL CONFIG ####
 ############################
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'secret!'
 app.config.update(
         DEBUG=True,
         #EMAIL SETTINGS
@@ -68,35 +69,22 @@ def projects():
 # CESIUM PAGE
 @app.route('/sat_track/')
 def ces_track():
-    iss_positions = []
-    positions = []
-    error_count = 0
+    dict_tle = {} 
 
     conn = sqlite3.connect(DATABASE)
     c = conn.cursor()
 
     for row in c.execute('SELECT * FROM tles'):
-        sat = Sat(row[0], row[1], row[2])
-        try:
-            lat, lon, height = sat.get_position()
-        except:
-            print("TLE ERROR FOR: " + str(row))
-            error_count += 1
-            pass
-        positions.append([lat, lon, height])
-
-    # Retrieve ISS tle
-    iss_data = []
-    for row in c.execute("SELECT * FROM tles WHERE itl_desig = '98067A  '"):
-        iss_data = row
+        dict_tle[row[0]] = [row[1], row[2]]
 
     conn.close()
-    #print(error_count)
-    #print(iss_data)
+
+    # JSON doesn't accept escape characters
+    for k,v in dict_tle.items():
+        dict_tle[k] = [v[0].strip('\r'), v[1].strip('\r')]
 
     return render_template('cesiumPage.html', 
-            pos_arr=json.dumps(positions),
-            iss_tle=json.dumps(iss_data))
+            tle_data=json.dumps(dict_tle))
 
 # CONTACT PAGE (FORM)
 @app.route('/contact/')

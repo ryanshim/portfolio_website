@@ -5,6 +5,12 @@
 <!-- BOOTSTRAP CDN -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+<!-- AJAX CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- SATELLITE.JS -->
+<script src="../static/node_modules/satellite.js/dist/satellite.js"></script>
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -17,9 +23,9 @@
   <!-- BODY -->
   <body>
       <div id="clock"></div>
-      <script src="../static/Cesium-1.48/Build/Cesium/Cesium.js"></script>
+      <script src="../static/node_modules/cesium/Build/Cesium/Cesium.js"></script>
       <style>
-            @import url(../static/Cesium-1.48/Build/Cesium/Widgets/widgets.css);
+            @import url(../static/node_modules/cesium/Build/Cesium/Widgets/widgets.css);
             html, body, #cesiumContainer {
                 width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
             }
@@ -44,7 +50,7 @@
       <script type="text/javascript" src="../static/js/cesium_plot.js"></script>
       <!-- CHECK: https://stackoverflow.com/questions/21626048/unable-to-pass-jinja2-variables-into-javascript-snippet -->
       <script type="text/javascript">
-            plot_all({{ pos_arr }}, {{ iss_data }});
+            main_driver("{{ tle_data }}");
       </script>
 
   </body>
