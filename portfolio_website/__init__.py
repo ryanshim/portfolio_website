@@ -8,13 +8,12 @@ from flask_mail import Mail, Message
 #### GLOBALS ####
 #################
 DATABASE = '/var/www/portfolio_website/portfolio_website/static/data/tle.db'
-DATABASE = './static/data/tle.db'   # delete before commit
+#DATABASE = './static/data/tle.db'   # delete before commit
 
 ############################
 #### FLASK EMAIL CONFIG ####
 ############################
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'secret!'
 app.config.update(
         DEBUG=True,
         #EMAIL SETTINGS
