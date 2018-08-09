@@ -1,8 +1,7 @@
 # Custom Ignores #
 .vscode
 __pycache__/
-node-modules/
-./portfolio_website/static/node_modules/
+/node-modules/
 .pyc
 .pyo
 portrait_bw.jpg
