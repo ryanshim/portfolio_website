@@ -1,7 +1,7 @@
 # Custom Ignores #
 .vscode
 __pycache__/
-Cesium-*
+node-modules/*
 .pyc
 .pyo
 portrait_bw.jpg
