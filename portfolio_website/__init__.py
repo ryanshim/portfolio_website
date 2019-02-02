@@ -33,10 +33,27 @@ mail = Mail(app)
 def homepage():
     with app.open_resource('static/textFiles/aboutMe.txt', 'r') as f:
         aboutMe = f.read().split('\n')
+    with app.open_resource('static/textFiles/abtSatTracker.txt', 'r') as f:
+        para_1 = f.read().split('\n')
+    with app.open_resource('static/textFiles/abtPortfolioWebsite.txt', 'r') as f:
+        para_2 = f.read().split('\n')
+    with app.open_resource('static/textFiles/abtBotnet.txt', 'r') as f:
+        para_3 = f.read().split('\n')
+
     return render_template("main.html",
-            title="RYAN SHIM",
-            paragraph="Website in production!",
+            title_main="RYAN SHIM",
+            title_prj="PERSONAL PROJECTS",
+            title_contact="CONTACT ME!",
             bio=aboutMe,
+            git_prj1_name="Satellite Tracker",
+            git_prj1_url="https://github.com/ryanshim/sat_tracker.git",
+            git_prj1_desc=para_1,
+            git_prj2_name="Personal Website",
+            git_prj2_url="https://github.com/ryanshim/portfolio_website.git",
+            git_prj2_desc=para_2,
+            git_prj3_name="Khala Botnet",
+            git_prj3_url="https://github.com/ryanshim/khala_botnet.git",
+            git_prj3_desc=para_3,
             gitLink="https://github.com/ryanshim",
             gitLogo="static/images/GitHub-Mark-Light-64px.png",
             resumeLink="static/textFiles/resume.pdf",

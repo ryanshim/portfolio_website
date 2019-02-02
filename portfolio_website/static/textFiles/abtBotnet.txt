@@ -1,0 +1,3 @@
+This was for a distributed systems course project!
+I primarily worked on the command and control server script that controlled all the bots that were infected by a worm. This server script was to send commands using a custom protocol, which would direct the bots to either propagate the worm in their own subnets of perform a distributed SYN-FLOOD attack on a specified victim.
+My team worked on a custom protocol and the client script that included the worm, which was propagated by a basic dictionary attack. They also worked on the client script, which also included the DDOS functionality.

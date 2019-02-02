@@ -9,6 +9,7 @@
 <!-- CUSTOM STYLESHEET -->
 <link rel="stylesheet" href="/static/css/main_styles.css">
 
+
 <title> {{ title }} </title>
 
 <body>
@@ -16,7 +17,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
-                <h3> {{ title }} </h3>
+                <h3> {{ title_main }} </h3>
             </div>
             <div class="col-sm-4">
                 <!--<p class="text-center"> {{ paragraph }} </p> WEBSITE IN PRODUCTION -->
@@ -24,15 +25,15 @@
             <div class="col-sm-4">
                 <h3>
                     <div class="btn-group pull-right" role="group" aria-label="...">
-                        <a href="/projects/"><button type="button" class="btn btn-default">Projects</button></a>
-                        <a href="/contact/"><button type="button" class="btn btn-default">Contact</button></a>
+                        <a href="#trgt-projects"><button type="button" class="btn btn-default">Projects</button></a>
+                        <a href="#trgt-contact"><button type="button" class="btn btn-default">Contact</button></a>
                     </div>
                 </h3>               
             </div>
         </div>
     </div>
 
-    <!-- MAIN CONTAINER -->
+    <!-- MAIN SECTION -->
     <div class="top-buffer">
         <div class="container">
             <div class="row">
@@ -52,6 +53,73 @@
         </div>
     </div>
 
+    <!-- PROJECTS SECTION -->
+    <div class="top-buffer">
+        <div class="container" id="trgt-projects">
+            <div class="row">
+                <div class="col-md-4"><h4>{{ title_prj }}</h4></div>
+
+                <!-- Project 1 Description -->
+                <div class="col-md-10">
+                    <h5><a href={{ git_prj1_url }}>{{ git_prj1_name }}</a></h5>
+                    <p>
+                    {% for line in git_prj1_desc %}
+                        {{ line }}
+                        <br></br>
+                    {% endfor %}
+                    </p>
+                </div>
+
+                <!-- Project 2 Description -->
+                <div class="col-md-10">
+                    <h5><a href={{ git_prj2_url }}>{{ git_prj2_name }}</a></h5>
+                    <p>
+                    {% for line in git_prj2_desc %}
+                        {{ line }}
+                        <br></br>
+                    {% endfor %}
+                </div>
+
+                <!-- Project 3 Description -->
+                <div class="col-md-10">
+                    <h5><a href={{ git_prj3_url }}>{{ git_prj3_name }}</a></h5>
+                    <p>
+                    {% for line in git_prj3_desc %}
+                        {{ line }}
+                        <br></br>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <!-- CONTACT SECTION -->
+    <div class="top-buffer">
+        <div class="container" id="trgt-contact">
+            <h4>{{ title_contact }}</h4>
+            <form action="/sendMail/" class="form-horizontal" method="POST">
+                <div class="form-group">
+                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" name="inputEmail"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputText" class="col-sm-2 control-label">Message</label>
+                    <div class="col-sm-10">
+                        <textarea type="text" class="form-control" rows="10" name="inputText"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default pull-right" style="width: 120px;">Send Message</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- FOOTER -->
     <div class="footer-images">
         <div class="container">
@@ -66,6 +134,7 @@
             </div>
         </div>
     </div>
+    <br><br>
 
 </body>
 
