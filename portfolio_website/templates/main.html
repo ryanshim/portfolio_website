@@ -6,6 +6,9 @@
 <!-- FONT IMPORT -->
 <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet"> 
 
+<!-- JQUERY CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <!-- CUSTOM STYLESHEET -->
 <link rel="stylesheet" href="/static/css/main_styles.css">
 
@@ -19,14 +22,12 @@
             <div class="col-sm-4">
                 <h3> {{ title_main }} </h3>
             </div>
-            <div class="col-sm-4">
-                <!--<p class="text-center"> {{ paragraph }} </p> WEBSITE IN PRODUCTION -->
-            </div>
+            <div class="col-sm-4"></div>
             <div class="col-sm-4">
                 <h3>
                     <div class="btn-group pull-right" role="group" aria-label="...">
-                        <a href="#trgt-projects"><button type="button" class="btn btn-default">Projects</button></a>
-                        <a href="#trgt-contact"><button type="button" class="btn btn-default">Contact</button></a>
+                        <button id="prj-btn" type="button" class="btn btn-default">Projects</button>
+                        <button id="contact-btn" type="button" class="btn btn-default">Contact</button>
                     </div>
                 </h3>               
             </div>
@@ -137,5 +138,8 @@
     <br><br>
 
 </body>
+
+<!-- LOAD ANIMATION SCRIPTS -->
+<script src="static/js/main_animations.js"></script>
 
 </html>
