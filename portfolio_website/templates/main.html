@@ -15,24 +15,21 @@
 
 <title> {{ title }} </title>
 
-<body>
+<body id="trgt-main">
     <!-- MAIN HEADER / NAVBAR -->
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <h3> {{ title_main }} </h3>
+    <nav class="navbar navbar-dark navbar-fixed-top" id="navbar-id">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <h3>{{ title_main }}</h3>
             </div>
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-                <h3>
-                    <div class="btn-group pull-right" role="group" aria-label="...">
-                        <button id="prj-btn" type="button" class="btn btn-default">Projects</button>
-                        <button id="contact-btn" type="button" class="btn btn-default">Contact</button>
-                    </div>
-                </h3>               
-            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <button id="main-btn" type="button" class="btn btn-default">Top</button>
+                <button id="prj-btn" type="button" class="btn btn-default">Projects</button>
+                <button id="contact-btn" type="button" class="btn btn-default">Contact</button>
+            </ul>
         </div>
-    </div>
+    </nav>
 
     <!-- MAIN SECTION -->
     <div class="top-buffer">

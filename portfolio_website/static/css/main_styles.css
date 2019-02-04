@@ -8,15 +8,26 @@
 	margin-top:100px;
 }
 
-h3 {
-    font-weight: normal;
-    color: slategrey;
-}
 
 .btn-default {
     width: 80px;
     background-color: transparent;
     color:slategrey;
+}
+
+.navbar {
+    background-color: dark-grey;
+    color:slategrey;
+}
+
+.navbar-right {
+    margin-top:20px;
+    margin-right:10px;
+}
+
+h3 {
+    font-weight: normal;
+    color: slategrey;
 }
 
 body {
